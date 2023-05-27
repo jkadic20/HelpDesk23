@@ -70,6 +70,7 @@
             this.btnMojiZahtjevi.TabIndex = 3;
             this.btnMojiZahtjevi.Text = "Pregled mojih zahtjeva";
             this.btnMojiZahtjevi.UseVisualStyleBackColor = true;
+            this.btnMojiZahtjevi.Click += new System.EventHandler(this.btnMojiZahtjevi_Click);
             // 
             // frmHomeKorisnik
             // 

@@ -1,4 +1,5 @@
-﻿using HelpDesk.Repositories;
+﻿using HelpDesk.Models;
+using HelpDesk.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,8 +12,15 @@ using System.Windows.Forms;
 
 namespace HelpDesk {
     public partial class frmLista : Form {
-        public frmLista() {
+        PodnositeljZahtjeva PrijavljenPZ = null;
+        DjelatnikCIP PrijavljenDCIP = null;
+        public frmLista(PodnositeljZahtjeva prijenosPZ=null, DjelatnikCIP prijenosDCIP=null) {
             InitializeComponent();
+            if (prijenosPZ != null) {
+                PrijavljenPZ = prijenosPZ;
+            } else {
+                PrijavljenDCIP = prijenosDCIP;
+            }
         }
 
         private void frmLista_Load(object sender, EventArgs e) {
@@ -21,8 +29,17 @@ namespace HelpDesk {
 
         private void PrikaziZahtjeve() {
             RepozitorijZahtjevi repoZahtjevi = new RepozitorijZahtjevi();
-            var lista = repoZahtjevi.DohvatiZahtjevDjelatnik();
-            dgvLista.DataSource = lista;
+            if (PrijavljenPZ == null) {
+                var lista = repoZahtjevi.DohvatiZahtjevDjelatnik();
+                dgvLista.DataSource = lista;
+                btnUrediPonovnoPosalji.Text = "Uredi";
+            }
+
+            else {
+                var lista = repoZahtjevi.DohvatiZahtjevPodnositeljZahtjeva(PrijavljenPZ.id);
+                dgvLista.DataSource = lista;
+                btnUrediPonovnoPosalji.Text = "Ponovno pošalji";
+            }
 
             dgvLista.Columns["Id"].DisplayIndex = 0;
             dgvLista.Columns["VrijemeKreiranja"].DisplayIndex = 1;
@@ -31,6 +48,20 @@ namespace HelpDesk {
             dgvLista.Columns["Status"].DisplayIndex = 4;
             dgvLista.Columns["Opis"].DisplayIndex = 5;
             dgvLista.Columns["Komentar"].DisplayIndex = 6;
+        }
+
+        private void btnPovratak_Click(object sender, EventArgs e) {
+            if (PrijavljenPZ == null) {
+                frmHomeDjelatnik frmPocetniIzbornik = new frmHomeDjelatnik(PrijavljenDCIP);
+                Hide();
+                frmPocetniIzbornik.ShowDialog();
+                Close();
+            } else {
+                frmHomeKorisnik frmPocetniIzbornik = new frmHomeKorisnik(PrijavljenPZ);
+                Hide();
+                frmPocetniIzbornik.ShowDialog();
+                Close();
+            }
         }
     }
 }

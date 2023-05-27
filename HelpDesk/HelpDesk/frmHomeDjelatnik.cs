@@ -41,7 +41,7 @@ namespace HelpDesk {
         }
 
         private void btnSviZahtjevi_Click(object sender, EventArgs e) {
-            frmLista frmZahtjevi = new frmLista();
+            frmLista frmZahtjevi = new frmLista(null , Prijavljen);
             Hide();
             frmZahtjevi.ShowDialog();
             Close();

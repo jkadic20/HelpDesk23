@@ -28,6 +28,23 @@ namespace HelpDesk.Repositories {
 
         }
 
+        public List<Zahtjev> DohvatiZahtjevPodnositeljZahtjeva(int id) {
+            var lista = new List<Zahtjev>();
+
+            string sql = $"SELECT * FROM Zahtjev WHERE KorisnikIdKorisnika = '{id}'";
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(sql);
+            while (reader.Read()) {
+                Zahtjev zahtjev = KreirajObjektZahtjeva(reader);
+                lista.Add(zahtjev);
+            }
+
+            reader.Close();
+            DB.CloseConnection();
+
+            return lista;
+        }
+
         private Zahtjev KreirajObjektZahtjeva(SqlDataReader reader) {
             int Id = int.Parse(reader["BrojZahtjeva"].ToString());
             DateTime VrijemeKreiranja = DateTime.Parse(reader["VrijemeKreiranja"].ToString());

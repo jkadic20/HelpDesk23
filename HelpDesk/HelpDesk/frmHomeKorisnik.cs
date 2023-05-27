@@ -35,5 +35,12 @@ namespace HelpDesk {
         private void btnNoviZahtjev_Click(object sender, EventArgs e) {
             MessageBox.Show("Funkcija nije planirana u ovoj verziji!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        private void btnMojiZahtjevi_Click(object sender, EventArgs e) {
+            frmLista frmZahtjevi = new frmLista(Prijavljen);
+            Hide();
+            frmZahtjevi.ShowDialog();
+            Close();
+        }
     }
 }

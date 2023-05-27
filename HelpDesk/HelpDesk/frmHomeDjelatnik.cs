@@ -8,18 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HelpDesk
-{
-    public partial class Form1 : Form
-    {
-        public Form1()
-        {
+namespace HelpDesk {
+    public partial class frmHomeDjelatnik : Form {
+        public frmHomeDjelatnik() {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            //komentar
         }
     }
 }

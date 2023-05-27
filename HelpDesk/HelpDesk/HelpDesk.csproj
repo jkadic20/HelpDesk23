@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DBLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\DBLayer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,16 +50,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmHomeDjelatnik.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmHomeDjelatnik.Designer.cs">
+      <DependentUpon>frmHomeDjelatnik.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHomeKorisnik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHomeKorisnik.Designer.cs">
+      <DependentUpon>frmHomeKorisnik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DjelatnikCIP.cs" />
+    <Compile Include="Models\korisnik.cs" />
+    <Compile Include="Models\PodnositeljZahtjeva.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Repositories\RepozitorijKorisnik.cs" />
+    <EmbeddedResource Include="frmHomeDjelatnik.resx">
+      <DependentUpon>frmHomeDjelatnik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHomeKorisnik.resx">
+      <DependentUpon>frmHomeKorisnik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -79,5 +105,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dlls\DBLayer.dll" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

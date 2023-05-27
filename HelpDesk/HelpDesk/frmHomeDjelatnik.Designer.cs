@@ -1,7 +1,5 @@
-﻿namespace HelpDesk
-{
-    partial class Form1
-    {
+﻿namespace HelpDesk {
+    partial class frmHomeDjelatnik {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -11,10 +9,8 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -26,23 +22,34 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // Form1
+            // txtUsername
+            // 
+            this.txtUsername.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsername.Location = new System.Drawing.Point(12, 12);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(100, 15);
+            this.txtUsername.TabIndex = 0;
+            // 
+            // frmHomeDjelatnik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Controls.Add(this.txtUsername);
+            this.Name = "frmHomeDjelatnik";
+            this.Text = "frmHomeDjelatnik";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox txtUsername;
     }
 }
-

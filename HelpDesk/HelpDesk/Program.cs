@@ -16,7 +16,8 @@ namespace HelpDesk
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            DBLayer.DB.SetConfiguration("IPS23_jkadic20", "jkadic20", "CfhOxw;+");
+            Application.Run(new frmLogin());
         }
     }
 }

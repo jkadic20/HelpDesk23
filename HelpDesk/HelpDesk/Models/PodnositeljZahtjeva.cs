@@ -6,5 +6,6 @@ using System.Threading.Tasks;
 
 namespace HelpDesk.Models {
     public class PodnositeljZahtjeva : korisnik {
+        //public 
     }
 }

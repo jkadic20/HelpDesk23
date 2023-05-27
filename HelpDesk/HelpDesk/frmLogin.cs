@@ -1,4 +1,5 @@
-﻿using HelpDesk.Repositories;
+﻿using HelpDesk.Models;
+using HelpDesk.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,9 @@ namespace HelpDesk
 {
     public partial class frmLogin : Form
     {
+        public DjelatnikCIP PrijavaDjelatnika = new DjelatnikCIP();
+        public PodnositeljZahtjeva PrijavaPodnositeljaZahtjeva = new PodnositeljZahtjeva();
+
         public frmLogin()
         {
             InitializeComponent();
@@ -32,12 +36,25 @@ namespace HelpDesk
                 RepozitorijKorisnik Korisnik = new RepozitorijKorisnik();
                 string korIme = txtUsername.Text.Trim().ToString();
                 string loznika = txtPassword.Text.Trim().ToString();
-                //bool provjeraLozinke = bool.Parse(Korisnik.DohvatiKorisnika(korIme, loznika));
-                if (Korisnik.DohvatiKorisnika(korIme, loznika) == null) {
-                    MessageBox.Show("Netocni podaci!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                korisnik pomKorisnik = new korisnik();
+                pomKorisnik = Korisnik.DohvatiKorisnikaLozinka(korIme, loznika);
+                if (pomKorisnik == null) {
+                    MessageBox.Show("Netocni podaci, ponovite unos!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else {
-                    MessageBox.Show("Uspjesna prijava!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (pomKorisnik.prava) {
+                        PrijavaDjelatnika = (DjelatnikCIP)pomKorisnik;
+                        frmHomeDjelatnik frmDjelatnik = new frmHomeDjelatnik(PrijavaDjelatnika);
+                        Hide();
+                        frmDjelatnik.ShowDialog();
+                        Close();
+                    } else {
+                        PrijavaPodnositeljaZahtjeva = (PodnositeljZahtjeva)pomKorisnik;
+                        frmHomeKorisnik frmKorisnik = new frmHomeKorisnik(PrijavaPodnositeljaZahtjeva);
+                        Hide();
+                        frmKorisnik.ShowDialog();
+                        Close();
+                    }
                 }
             }
         }

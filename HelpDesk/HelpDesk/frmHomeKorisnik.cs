@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HelpDesk.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,8 +11,29 @@ using System.Windows.Forms;
 
 namespace HelpDesk {
     public partial class frmHomeKorisnik : Form {
-        public frmHomeKorisnik() {
+        PodnositeljZahtjeva Prijavljen = null;
+        public frmHomeKorisnik(PodnositeljZahtjeva prijenos) {
             InitializeComponent();
+            Prijavljen = prijenos;
+        }
+
+        private void frmHomeKorisnik_Load(object sender, EventArgs e) {
+            PromjenaTeksta();
+        }
+
+        private void PromjenaTeksta() {
+            txtUsername.Text = Prijavljen.korisnickoIme;
+        }
+
+        private void btnOdjava_Click(object sender, EventArgs e) {
+            frmLogin frmPrijava = new frmLogin();
+            Hide();
+            frmPrijava.ShowDialog();
+            Close();
+        }
+
+        private void btnNoviZahtjev_Click(object sender, EventArgs e) {
+            MessageBox.Show("Funkcija nije planirana u ovoj verziji!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

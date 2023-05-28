@@ -26,6 +26,7 @@
             this.dgvLista = new System.Windows.Forms.DataGridView();
             this.btnPovratak = new System.Windows.Forms.Button();
             this.btnUrediPonovnoPosalji = new System.Windows.Forms.Button();
+            this.btnFilter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,12 +64,24 @@
             this.btnUrediPonovnoPosalji.Size = new System.Drawing.Size(146, 30);
             this.btnUrediPonovnoPosalji.TabIndex = 2;
             this.btnUrediPonovnoPosalji.UseVisualStyleBackColor = true;
+            this.btnUrediPonovnoPosalji.Click += new System.EventHandler(this.btnUrediPonovnoPosalji_Click);
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.Location = new System.Drawing.Point(713, 12);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(75, 23);
+            this.btnFilter.TabIndex = 3;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // frmLista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.btnUrediPonovnoPosalji);
             this.Controls.Add(this.btnPovratak);
             this.Controls.Add(this.dgvLista);
@@ -85,5 +98,6 @@
         private System.Windows.Forms.DataGridView dgvLista;
         private System.Windows.Forms.Button btnPovratak;
         private System.Windows.Forms.Button btnUrediPonovnoPosalji;
+        private System.Windows.Forms.Button btnFilter;
     }
 }

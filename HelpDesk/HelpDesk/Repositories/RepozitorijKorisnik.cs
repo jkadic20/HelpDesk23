@@ -8,7 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace HelpDesk.Repositories {
+
+    /// <summary>
+    /// Klasa za provjere korisnika u bazi
+    /// </summary>
     public class RepozitorijKorisnik {
+
+        /// <summary>
+        /// Funkcija koja vraća korisnika iz baze
+        /// </summary>
+        /// <param name="korIme">Korisničko ime</param>
+        /// <param name="lozinka">Lozinka</param>
+        /// <returns>Vraća korisnika ako je točna lozinka, a ako je netočna vraća null</returns>
         public korisnik DohvatiKorisnikaLozinka(string korIme, string lozinka) {
             korisnik dohvaceniKorisnik = null;
             string sql = $"SELECT * FROM Korisnik WHERE KorisnickoIme = '{korIme}' AND Lozinka = '{lozinka}'";
@@ -40,6 +51,12 @@ namespace HelpDesk.Repositories {
             return dohvaceniKorisnik;
         }
 
+
+        /// <summary>
+        /// Funkcija koja vraća korisnika iz baze
+        /// </summary>
+        /// <param name="korIme">Korisnicko ime</param>
+        /// <returns>Ako postoji korisnik u bazi vraća korisnika, ako ne vraća null</returns>
         public korisnik DohvatiKorisnika(string korIme) {
             korisnik dohvaceniKorisnik = null;
             string sql = $"SELECT * FROM Korisnik WHERE KorisnickoIme = '{korIme}'";
@@ -68,6 +85,11 @@ namespace HelpDesk.Repositories {
             return dohvaceniKorisnik;
         }
 
+        /// <summary>
+        /// Funkcija koja kreira objekt grupe PodnositeljZahtjeva
+        /// </summary>
+        /// <param name="reader">sql reader za bazu</param>
+        /// <returns>Vraća korisnika PodnositeljZahtjeva</returns>
         private korisnik KreirajObjektKorisnik (SqlDataReader reader){
             int Id = int.Parse(reader["IdKorisnika"].ToString());
             string korIme = reader["KorisnickoIme"].ToString();
@@ -88,6 +110,11 @@ namespace HelpDesk.Repositories {
             return Korisnik;
         }
 
+        /// <summary>
+        /// Funkcija koja kreira objekt grupe DjelatnikCIP
+        /// </summary>
+        /// <param name="reader">sql reader za bazu</param>
+        /// <returns>Vraća korisnika DjelatnikCIP</returns>
         private korisnik KreirajObjektDjelatnik(SqlDataReader reader) {
             int Id = int.Parse(reader["IdDjelatnika"].ToString());
             string korIme = reader["KorisnickoIme"].ToString();

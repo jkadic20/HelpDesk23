@@ -8,8 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace HelpDesk.Models {
+    /// <summary>
+    /// Apstraktna klasa koja sadrži osnove za obe grupe korisnika
+    /// </summary>
     public class korisnik {
-
         public int id { get; set; }
         public string ime { get; set; }
         public string prezime { get; set; }

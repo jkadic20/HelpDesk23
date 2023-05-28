@@ -5,6 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace HelpDesk.Models {
+
+    /// <summary>
+    /// Klasa za zahtjeve
+    /// </summary>
     public class Zahtjev {
         public int id { get; set; }
         public DateTime vrijemeKreiranja { get; set; }

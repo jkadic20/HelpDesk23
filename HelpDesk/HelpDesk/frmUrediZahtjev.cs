@@ -21,6 +21,9 @@ namespace HelpDesk {
         }
 
         private void frmUrediZahtjev_Load(object sender, EventArgs e) {
+            if (uredivaniZahtjev.status == "zaprimljen") {
+                btnSpremi.Text = "Preuzmi zahtjev";
+            }
             lblIdZahtjeva.Text = uredivaniZahtjev.id.ToString();
             lblVrijemeKreiranja.Text = uredivaniZahtjev.vrijemeKreiranja.ToString();
             lblPreuzeo.Text = uredivaniZahtjev.zahtjevPreuzeo;

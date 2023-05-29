@@ -32,7 +32,7 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUsername.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -45,48 +45,58 @@
             // 
             // btnOdjava
             // 
+            this.btnOdjava.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOdjava.BackColor = System.Drawing.Color.IndianRed;
             this.btnOdjava.Location = new System.Drawing.Point(713, 12);
             this.btnOdjava.Name = "btnOdjava";
             this.btnOdjava.Size = new System.Drawing.Size(75, 27);
             this.btnOdjava.TabIndex = 1;
             this.btnOdjava.Text = "Odjava";
-            this.btnOdjava.UseVisualStyleBackColor = true;
+            this.btnOdjava.UseVisualStyleBackColor = false;
             this.btnOdjava.Click += new System.EventHandler(this.btnOdjava_Click);
             // 
             // btnSviZahtjevi
             // 
+            this.btnSviZahtjevi.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSviZahtjevi.BackColor = System.Drawing.SystemColors.Info;
+            this.btnSviZahtjevi.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnSviZahtjevi.Location = new System.Drawing.Point(290, 54);
             this.btnSviZahtjevi.Name = "btnSviZahtjevi";
             this.btnSviZahtjevi.Size = new System.Drawing.Size(182, 104);
             this.btnSviZahtjevi.TabIndex = 2;
             this.btnSviZahtjevi.Text = "Svi zahtjevi";
-            this.btnSviZahtjevi.UseVisualStyleBackColor = true;
+            this.btnSviZahtjevi.UseVisualStyleBackColor = false;
             this.btnSviZahtjevi.Click += new System.EventHandler(this.btnSviZahtjevi_Click);
             // 
             // btnIzvjestaj
             // 
+            this.btnIzvjestaj.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnIzvjestaj.BackColor = System.Drawing.SystemColors.Info;
             this.btnIzvjestaj.Location = new System.Drawing.Point(290, 186);
             this.btnIzvjestaj.Name = "btnIzvjestaj";
             this.btnIzvjestaj.Size = new System.Drawing.Size(182, 104);
             this.btnIzvjestaj.TabIndex = 3;
             this.btnIzvjestaj.Text = "Izrada izvješća";
-            this.btnIzvjestaj.UseVisualStyleBackColor = true;
+            this.btnIzvjestaj.UseVisualStyleBackColor = false;
             this.btnIzvjestaj.Click += new System.EventHandler(this.btnIzvjestaj_Click);
             // 
             // btnStatistika
             // 
+            this.btnStatistika.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnStatistika.BackColor = System.Drawing.SystemColors.Info;
             this.btnStatistika.Location = new System.Drawing.Point(290, 319);
             this.btnStatistika.Name = "btnStatistika";
             this.btnStatistika.Size = new System.Drawing.Size(182, 104);
             this.btnStatistika.TabIndex = 4;
             this.btnStatistika.Text = "Statistika";
-            this.btnStatistika.UseVisualStyleBackColor = true;
+            this.btnStatistika.UseVisualStyleBackColor = false;
             this.btnStatistika.Click += new System.EventHandler(this.btnStatistika_Click);
             // 
             // frmHomeDjelatnik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnStatistika);
             this.Controls.Add(this.btnIzvjestaj);

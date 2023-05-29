@@ -31,13 +31,19 @@ namespace HelpDesk {
         }
 
         private void btnSpremi_Click(object sender, EventArgs e) {
-            RepozitorijUredivanjePonovnoSlanje uredivanjeBaze = new RepozitorijUredivanjePonovnoSlanje();
-            urednik.urediZahtjev(uredivaniZahtjev, txtPrioritet.Text, txtStatus.Text, txtKomentar.Text);
-            uredivanjeBaze.urediBazu(uredivaniZahtjev);
-            frmLista frmLista = new frmLista(null, urednik);
-            Hide();
-            frmLista.ShowDialog();
-            Close();
+            if (provjeriUnosPrioriteta(txtPrioritet.Text)) {
+                MessageBox.Show("Nedozvoljena vrijednost polja prioritet!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else if (provjeriUnosStatusa(txtStatus.Text)) {
+                MessageBox.Show("Nedozvoljena vrijednost polja status!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else {
+                RepozitorijUredivanjePonovnoSlanje uredivanjeBaze = new RepozitorijUredivanjePonovnoSlanje();
+                urednik.urediZahtjev(urednik, uredivaniZahtjev, txtPrioritet.Text, txtStatus.Text, txtKomentar.Text);
+                uredivanjeBaze.urediBazu(uredivaniZahtjev);
+                frmLista frmLista = new frmLista(null, urednik);
+                Hide();
+                frmLista.ShowDialog();
+                Close();
+            }
         }
 
         private void btnOdustani_Click(object sender, EventArgs e) {
@@ -45,6 +51,66 @@ namespace HelpDesk {
             Hide();
             frmLista.ShowDialog();
             Close();
+        }
+
+        private void btnObrisi_Click(object sender, EventArgs e) {
+            RepozitorijUredivanjePonovnoSlanje uredivanjeBaze = new RepozitorijUredivanjePonovnoSlanje();
+            uredivanjeBaze.obrisiBazu(uredivaniZahtjev);
+            frmLista frmLista = new frmLista(null, urednik);
+            Hide();
+            frmLista.ShowDialog();
+            Close();
+        }
+
+
+        /// <summary>
+        /// Funkcija koja provjerava ispravnost unesenog prioriteta
+        /// </summary>
+        /// <param name="prioritet">Unos koji se provjerava</param>
+        /// <returns></returns>
+        private bool provjeriUnosPrioriteta(string prioritet) {
+            bool provjera = false;
+
+            switch (prioritet) {
+                case "visok":
+                    provjera = true;
+                    break;
+                case "srednji":
+                    provjera = true;
+                    break;
+                case "niski":
+                    provjera = true;
+                    break;
+            }
+
+            return provjera;
+        }
+
+
+        /// <summary>
+        /// Funkcija koja provjerava ispravnost unesenog statusa
+        /// </summary>
+        /// <param name="status">Unos koji se provjerava</param>
+        /// <returns></returns>
+        private bool provjeriUnosStatusa(string status) {
+            bool provjera = false;
+
+            switch (status) {
+                case "zatvoren":
+                    provjera = true;
+                    break;
+                case "u postupku":
+                    provjera = true;
+                    break;
+                case "odbijen":
+                    provjera = true;
+                    break;
+                case "zaprimljen":
+                    provjera = true;
+                    break;
+            }
+
+            return provjera;
         }
     }
 }

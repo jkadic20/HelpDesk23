@@ -100,7 +100,11 @@ namespace HelpDesk {
                 Close();
             }
             else {
-                MessageBox.Show("Funkcija nije planirana u ovoj verziji!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Zahtjev odabraniZahtjev = dgvLista.CurrentRow.DataBoundItem as Zahtjev;
+                frmPonoviZahtjev frmPonoviZahtjev = new frmPonoviZahtjev(PrijavljenPZ, odabraniZahtjev);
+                Hide();
+                frmPonoviZahtjev.ShowDialog();
+                Close();
             }
         }
     }

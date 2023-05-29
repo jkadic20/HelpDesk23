@@ -1,6 +1,7 @@
 ﻿using DBLayer;
 using HelpDesk.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.SqlClient;
@@ -159,6 +160,8 @@ namespace HelpDesk.Repositories {
             string Status = reader["Status"].ToString();
             string Opis = reader["Opis"].ToString();
             string Komentar = reader["Komentar"].ToString();
+            int idKorisnika = int.Parse(reader["KorisnikIdKorisnika"].ToString());
+            int idDjelatnika = int.Parse(reader["ZahtjevIdDjelatnika"].ToString());
 
             var zahtjev = new Zahtjev {
                 id = Id,
@@ -167,10 +170,34 @@ namespace HelpDesk.Repositories {
                 prioritet = Prioritet,
                 status = Status,
                 opis = Opis,
-                komentar = Komentar
+                komentar = Komentar,
+                korisnikIdKorisnika = idKorisnika,
+                zahtjevIdDjelatnika = idDjelatnika
             };
 
             return zahtjev;
+
+        }
+
+        /// <summary>
+        /// Funkcija pretvara brojač id na jedan veći od zadnjeg
+        /// </summary>
+        public int dohvatiZadnjiZahtjevPoId() {
+            var sql = $"SELECT * FROM Zahtjev WHERE BrojZahtjeva=(SELECT max(BrojZahtjeva) FROM Zahtjev)";
+            Zahtjev zahtjev = null;
+
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(sql);
+            while (reader.Read()) {
+                zahtjev = KreirajObjektZahtjeva(reader);
+            }
+
+            int zadnjiIdZahtjeva = zahtjev.id + 1;
+
+            reader.Close();
+            DB.CloseConnection();
+
+            return zadnjiIdZahtjeva;
 
         }
     }

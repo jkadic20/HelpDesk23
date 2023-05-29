@@ -80,6 +80,12 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPonoviZahtjev.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPonoviZahtjev.Designer.cs">
+      <DependentUpon>frmPonoviZahtjev.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUrediZahtjev.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPonoviZahtjev.resx">
+      <DependentUpon>frmPonoviZahtjev.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUrediZahtjev.resx">
       <DependentUpon>frmUrediZahtjev.cs</DependentUpon>

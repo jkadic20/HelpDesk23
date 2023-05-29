@@ -17,5 +17,7 @@ namespace HelpDesk.Models {
         public string status { get; set; }
         public string opis { get; set; }
         public string komentar { get; set; }
+        public int korisnikIdKorisnika { get; set; }
+        public int zahtjevIdDjelatnika { get; set; }
     }
 }

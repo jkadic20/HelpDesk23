@@ -59,5 +59,9 @@ namespace HelpDesk {
             frmLista.ShowDialog();
             Close();
         }
+
+        private void frmFilter_Load(object sender, EventArgs e) {
+
+        }
     }
 }

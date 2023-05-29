@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HelpDesk.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,10 +19,17 @@ namespace HelpDesk.Models {
         /// <param name="opis">Novi opis zahtjeva</param>
         /// <returns></returns>
         public Zahtjev ponoviZahtjev (Zahtjev ponovljeniZahtjev, string opis) {
+            RepozitorijZahtjevi repozitorijZahtjevi = new RepozitorijZahtjevi();
+            DateTime vrijemeSlanja = DateTime.Now;
             Zahtjev ponovniZahtjev = new Zahtjev {
                 opis = opis,
-                id = ponovljeniZahtjev.id,
-                vrijemeKreiranja = ponovljeniZahtjev.vrijemeKreiranja               
+                status = "zaprimljen",
+                id = repozitorijZahtjevi.dohvatiZadnjiZahtjevPoId(),
+                vrijemeKreiranja = vrijemeSlanja,
+                korisnikIdKorisnika = ponovljeniZahtjev.korisnikIdKorisnika,
+                komentar = "nema komentara",
+                prioritet = "",
+                zahtjevIdDjelatnika = 0
             };
             return ponovniZahtjev;
         }

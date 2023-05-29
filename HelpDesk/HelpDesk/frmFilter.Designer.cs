@@ -83,28 +83,31 @@
             // 
             // btnPotvrdiFIlter
             // 
+            this.btnPotvrdiFIlter.BackColor = System.Drawing.SystemColors.Info;
             this.btnPotvrdiFIlter.Location = new System.Drawing.Point(327, 12);
             this.btnPotvrdiFIlter.Name = "btnPotvrdiFIlter";
             this.btnPotvrdiFIlter.Size = new System.Drawing.Size(75, 23);
             this.btnPotvrdiFIlter.TabIndex = 6;
             this.btnPotvrdiFIlter.Text = "Filtriraj";
-            this.btnPotvrdiFIlter.UseVisualStyleBackColor = true;
+            this.btnPotvrdiFIlter.UseVisualStyleBackColor = false;
             this.btnPotvrdiFIlter.Click += new System.EventHandler(this.btnPotvrdiFIlter_Click);
             // 
             // btnOdustani
             // 
+            this.btnOdustani.BackColor = System.Drawing.Color.IndianRed;
             this.btnOdustani.Location = new System.Drawing.Point(12, 12);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(80, 23);
             this.btnOdustani.TabIndex = 7;
             this.btnOdustani.Text = "Odustani";
-            this.btnOdustani.UseVisualStyleBackColor = true;
+            this.btnOdustani.UseVisualStyleBackColor = false;
             this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
             // 
             // frmFilter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(423, 109);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnPotvrdiFIlter);
@@ -116,6 +119,7 @@
             this.Controls.Add(this.txtZahtjevPreuzeo);
             this.Name = "frmFilter";
             this.Text = "frmFilter";
+            this.Load += new System.EventHandler(this.frmFilter_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

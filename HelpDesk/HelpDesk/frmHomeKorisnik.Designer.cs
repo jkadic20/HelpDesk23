@@ -31,7 +31,7 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUsername.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -44,38 +44,45 @@
             // 
             // btnOdjava
             // 
+            this.btnOdjava.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOdjava.BackColor = System.Drawing.Color.IndianRed;
             this.btnOdjava.Location = new System.Drawing.Point(713, 12);
             this.btnOdjava.Name = "btnOdjava";
             this.btnOdjava.Size = new System.Drawing.Size(75, 27);
             this.btnOdjava.TabIndex = 1;
             this.btnOdjava.Text = "Odjava";
-            this.btnOdjava.UseVisualStyleBackColor = true;
+            this.btnOdjava.UseVisualStyleBackColor = false;
             this.btnOdjava.Click += new System.EventHandler(this.btnOdjava_Click);
             // 
             // btnNoviZahtjev
             // 
-            this.btnNoviZahtjev.Location = new System.Drawing.Point(298, 96);
+            this.btnNoviZahtjev.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnNoviZahtjev.BackColor = System.Drawing.SystemColors.Info;
+            this.btnNoviZahtjev.Location = new System.Drawing.Point(290, 96);
             this.btnNoviZahtjev.Name = "btnNoviZahtjev";
             this.btnNoviZahtjev.Size = new System.Drawing.Size(182, 104);
             this.btnNoviZahtjev.TabIndex = 2;
             this.btnNoviZahtjev.Text = "Novi Zahtjev";
-            this.btnNoviZahtjev.UseVisualStyleBackColor = true;
+            this.btnNoviZahtjev.UseVisualStyleBackColor = false;
             this.btnNoviZahtjev.Click += new System.EventHandler(this.btnNoviZahtjev_Click);
             // 
             // btnMojiZahtjevi
             // 
-            this.btnMojiZahtjevi.Location = new System.Drawing.Point(298, 253);
+            this.btnMojiZahtjevi.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnMojiZahtjevi.BackColor = System.Drawing.SystemColors.Info;
+            this.btnMojiZahtjevi.Location = new System.Drawing.Point(290, 253);
             this.btnMojiZahtjevi.Name = "btnMojiZahtjevi";
             this.btnMojiZahtjevi.Size = new System.Drawing.Size(182, 104);
             this.btnMojiZahtjevi.TabIndex = 3;
             this.btnMojiZahtjevi.Text = "Pregled mojih zahtjeva";
-            this.btnMojiZahtjevi.UseVisualStyleBackColor = true;
+            this.btnMojiZahtjevi.UseVisualStyleBackColor = false;
             this.btnMojiZahtjevi.Click += new System.EventHandler(this.btnMojiZahtjevi_Click);
             // 
             // frmHomeKorisnik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnMojiZahtjevi);
             this.Controls.Add(this.btnNoviZahtjev);

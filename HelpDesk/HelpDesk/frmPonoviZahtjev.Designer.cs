@@ -46,7 +46,7 @@
             this.btnOdustani.BackColor = System.Drawing.Color.IndianRed;
             this.btnOdustani.Location = new System.Drawing.Point(45, 135);
             this.btnOdustani.Name = "btnOdustani";
-            this.btnOdustani.Size = new System.Drawing.Size(80, 25);
+            this.btnOdustani.Size = new System.Drawing.Size(80, 27);
             this.btnOdustani.TabIndex = 32;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = false;
@@ -58,7 +58,7 @@
             this.btnPosalji.BackColor = System.Drawing.SystemColors.Info;
             this.btnPosalji.Location = new System.Drawing.Point(250, 135);
             this.btnPosalji.Name = "btnPosalji";
-            this.btnPosalji.Size = new System.Drawing.Size(120, 25);
+            this.btnPosalji.Size = new System.Drawing.Size(120, 27);
             this.btnPosalji.TabIndex = 31;
             this.btnPosalji.Text = "Pošalji zahtjev";
             this.btnPosalji.UseVisualStyleBackColor = false;

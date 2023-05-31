@@ -40,7 +40,7 @@ namespace HelpDesk.Repositories {
         /// </summary>
         /// <param name="noviZahtjev">Novo poslani zahtjev</param>
         public void ponoviSlanje(Zahtjev noviZahtjev) {
-            var sql = $"INSERT INTO Zahtjev VALUES ('{noviZahtjev.id}', '{noviZahtjev.vrijemeKreiranja.ToString()}', '{noviZahtjev.zahtjevPreuzeo}', '{noviZahtjev.prioritet}', '{noviZahtjev.status}', '{noviZahtjev.opis}', '{noviZahtjev.komentar}', '{noviZahtjev.korisnikIdKorisnika}', '{noviZahtjev.zahtjevIdDjelatnika}')";
+            var sql = $"INSERT INTO Zahtjev VALUES ('{noviZahtjev.id}', '{noviZahtjev.vrijemeKreiranja}', '{noviZahtjev.zahtjevPreuzeo}', '{noviZahtjev.prioritet}', '{noviZahtjev.status}', '{noviZahtjev.opis}', '{noviZahtjev.komentar}', '{noviZahtjev.korisnikIdKorisnika}', '{noviZahtjev.zahtjevIdDjelatnika}')";
             DB.OpenConnection();
             DB.ExecuteCommand(sql);
             DB.CloseConnection();

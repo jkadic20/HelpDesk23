@@ -34,9 +34,9 @@ namespace HelpDesk {
         }
 
         private void btnSpremi_Click(object sender, EventArgs e) {
-            if (provjeriUnosPrioriteta(txtPrioritet.Text)) {
+            if (!provjeriUnosPrioriteta(txtPrioritet.Text.Trim())) {
                 MessageBox.Show("Nedozvoljena vrijednost polja prioritet!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } else if (provjeriUnosStatusa(txtStatus.Text)) {
+            } else if (!provjeriUnosStatusa(txtStatus.Text.Trim())) {
                 MessageBox.Show("Nedozvoljena vrijednost polja status!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else {
                 RepozitorijUredivanjePonovnoSlanje uredivanjeBaze = new RepozitorijUredivanjePonovnoSlanje();
@@ -84,6 +84,15 @@ namespace HelpDesk {
                 case "niski":
                     provjera = true;
                     break;
+                case "Visok":
+                    provjera = true;
+                    break;
+                case "Srednji":
+                    provjera = true;
+                    break;
+                case "Niski":
+                    provjera = true;
+                    break;
             }
 
             return provjera;
@@ -109,6 +118,18 @@ namespace HelpDesk {
                     provjera = true;
                     break;
                 case "zaprimljen":
+                    provjera = true;
+                    break;
+                case "Zatvoren":
+                    provjera = true;
+                    break;
+                case "U postupku":
+                    provjera = true;
+                    break;
+                case "Odbijen":
+                    provjera = true;
+                    break;
+                case "Zaprimljen":
                     provjera = true;
                     break;
             }
